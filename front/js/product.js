@@ -20,6 +20,7 @@ var productname = data[product].name;
 var productprice = data[product].price;
 var productdescription = data[product].description;
 var productcolor = data[product].colors;
+console.log(productcolor);
 
 let affichageimg = `<img src="${productimage}" alt="${productalttxt}">`;
     {
@@ -40,10 +41,10 @@ window.onload = function displayproduct() {
         .insertAdjacentHTML('afterbegin', `
         ${productdescription}
         `)
-        for (let colors of [product]){
+        for (let colors of productcolor){
         document.getElementById('colors')
         .insertAdjacentHTML('afterbegin', `
-        <option value="${productcolor}">${productcolor}</option>
+        <option value="${colors}">${colors}</option>
         `)
         }
         
