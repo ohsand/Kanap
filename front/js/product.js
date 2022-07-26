@@ -49,13 +49,5 @@ window.onload = function displayproduct() {
         
 }
 
-/*window.onload = function displayprice() {
-        document.getElementById('price')
-            .insertAdjacentHTML('afterbegin', `
-        ${productprice}
-        `)
-    }*/
-
-
 }));
 
