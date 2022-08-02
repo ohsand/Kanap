@@ -49,6 +49,36 @@ window.onload = function displayproduct() {
         }
         
 }
+let colors = document.querySelector("#colors");
+colors.addEventListener('change', (event) => {
+    console.log(colors.value);
+  });
+let quantity = document.querySelector("#quantity");
+quantity.addEventListener('change', (event) => {
+    console.log(quantity.value);
+});
+
+/*class basketItem {
+    constructor(productname, productcolor, productquantity) {
+        this.productname = productname;
+        this.productcolor = productcolor;
+        this.productquantity = productquantity;
+    }
+}*/
+
+
+let submit = document.getElementById('addToCart');
+submit.onclick = () => {
+    const basketItem = {
+        productname: `${productname}`,
+        productcolor: colors.value,
+        productquantity: quantity.value,
+    }
+    console.log(basketItem);
+   /* let addedItem = new basketItem(`${productname}`, colors.value, quantity.value);*/
+}
+
+const local = JSON.parse(localStorage.getItem("basketItem"));
 
 }));
 
