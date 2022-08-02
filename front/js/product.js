@@ -75,10 +75,26 @@ submit.onclick = () => {
         productquantity: quantity.value,
     }
     console.log(basketItem);
-   /* let addedItem = new basketItem(`${productname}`, colors.value, quantity.value);*/
+
+   //Check if local storage is empty
+   /*function checkStorage () {
+    if (localStorage.length > 0){
+        //Items are stored in local storage
+    }else{
+        //Local storage is empty
+    }
+   }*/
+        // Y > 
+   const local = localStorage.setItem(`${productname}` + colors.value, JSON.stringify(basketItem));
+        //N > Check if there is an entry with current product + color
+            // Y > add current quantity value to it's quantity
+            // N > const local = localStorage.setItem("basketItem", JSON.stringify(basketItem));
 }
 
-const local = JSON.parse(localStorage.getItem("basketItem"));
+let empty = document.getElementById('emptycart');
+empty.onclick = () => {
+    const local = localStorage.clear();
+    }
 
 }));
 
