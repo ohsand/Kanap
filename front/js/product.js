@@ -75,20 +75,16 @@ submit.onclick = () => {
         productquantity: quantity.value,
     }
     console.log(basketItem);
-
+checkStorage()
    //Check if local storage is empty
-   /*function checkStorage () {
-    if (localStorage.length > 0){
-        //Items are stored in local storage
+function checkStorage () {
+    if (localStorage.getItem(`${productname}` + colors.value) === null){
+        const local = localStorage.setItem(`${productname}` + colors.value, JSON.stringify(basketItem));
     }else{
-        //Local storage is empty
+        console.log("this product is already in basket");
+        // Y > add current quantity value to it's quantity
     }
-   }*/
-        // Y > 
-   const local = localStorage.setItem(`${productname}` + colors.value, JSON.stringify(basketItem));
-        //N > Check if there is an entry with current product + color
-            // Y > add current quantity value to it's quantity
-            // N > const local = localStorage.setItem("basketItem", JSON.stringify(basketItem));
+   }
 }
 
 let empty = document.getElementById('emptycart');
