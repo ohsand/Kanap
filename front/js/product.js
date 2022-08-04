@@ -82,7 +82,7 @@ function checkStorage () {
         const local = localStorage.setItem(`${productname}` + colors.value, JSON.stringify(basketItem));
     }else{
         console.log("this product is already in basket");
-        // Y > add current quantity value to it's quantity
+        //> add current quantity value to it's quantity
     }
    }
 }
